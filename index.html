@@ -3,45 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Thumbnail Downloader</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>YouTube Thumbnail Grabber</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div id="logoContainer">
-            <img id="logo" src="path/to/your/logo.png" alt="Your Logo">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <h1>YouTube Video Thumbnail Downloader</h1>
+        <h1>YouTube Thumbnail Grabber</h1>
     </header>
 
-    <div id="adSpaceTop">
-        <!-- Insert your ad code here -->
-        <p>This is an ad space. Insert your ad code here.</p>
-    </div>
+    <main>
+        <section class="input-section">
+            <label for="videoUrl">Enter YouTube Video URL or ID:</label>
+            <div class="input-group">
+                <input type="text" id="videoUrl" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ or dQw4w9WgXcQ">
+                <button id="fetchBtn">Get Thumbnails</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+        </section>
 
-    <p>Enter a valid YouTube video URL below and click the "Show & Download Thumbnail" button:</p>
-    <input type="text" id="videoUrl" placeholder="Enter YouTube video URL">
-    <button onclick="showThumbnail()">Show & Download Thumbnail</button>
-    <div id="thumbnailLinkAbove"></div>
-    <div id="thumbnailContainer"></div>
-    <div id="thumbnailLinkBelow"></div>
+        <section id="resultSection" class="hidden">
+            <h2>Available Thumbnails</h2>
+            <div id="thumbGrid" class="thumb-grid">
+                <!-- Thumbnail cards will be inserted here by JavaScript -->
+            </div>
+        </section>
+    </main>
 
-    <div id="adSpaceMiddle">
-        <!-- Insert your ad code here -->
-        <p>This is an ad space. Insert your ad code here.</p>
-    </div>
-
-    <div id="adSpaceBottom">
-        <!-- Insert your ad code here -->
-        <p>This is an ad space. Insert your ad code here.</p>
-    </div>
+    <footer>
+        <p>&copy; <span id="year"></span> Kelo Web Tools</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
