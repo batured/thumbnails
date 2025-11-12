@@ -1,99 +1,171 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-nav {
-    margin-bottom: 20px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    margin: 0 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-#logoContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-#logo {
-    max-width: 100%;
-    height: auto;
-    margin-right: 10px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #333;
     color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.input-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+}
+
+#videoUrl {
+    flex-grow: 1;
+    max-width: 500px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-group button {
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+#fetchBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+#fetchBtn:hover {
     background-color: #0056b3;
 }
 
-#adSpaceTop,
-#adSpaceMiddle,
-#adSpaceBottom {
-    text-align: center;
-    margin: 20px 0;
+#clearBtn {
+    background-color: #6c757d;
+    color: white;
 }
 
-#thumbnailLinkAbove,
-#thumbnailLinkBelow {
-    text-align: center;
-    margin: 20px 0;
+#clearBtn:hover {
+    background-color: #5a6268;
 }
 
-#thumbnailContainer img {
-    max-width: 100%;
+#resultSection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.thumb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.thumb-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.thumb-card:hover {
+    transform: translateY(-5px);
+}
+
+.thumb-card img {
+    width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area */
     display: block;
-    margin: 20px 0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #eee;
+}
+
+.thumb-card .meta {
+    padding: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.thumb-card .download {
+    display: block;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.thumb-card .download:hover {
+    background-color: #218838;
+}
+
+.thumb-card img[src^="data:image/svg+xml"] {
+    background-color: #f3f6fb; /* Background for placeholder */
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #333;
+    color: #bbb;
+    font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #videoUrl, .input-group button {
+        max-width: 100%;
+    }
+    .thumb-grid {
+        grid-template-columns: 1fr;
+    }
 }
